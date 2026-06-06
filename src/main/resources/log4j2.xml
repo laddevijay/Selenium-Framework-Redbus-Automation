@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Properties>
+		<!-- Log file location (CI/CD safe path) -->
+		<Property name="LOG_PATH">logs</Property>
+		<Property name="LOG_FILE">automation.log</Property>
+	</Properties>
+
+	<Appenders>
+		<!-- ================= Console Logger ================= -->
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1} - %msg%n" />
+		</Console>
+		<!-- ================= File Logger ================= -->
+		<RollingFile name="FileAppender"
+			fileName="${LOG_PATH}/${LOG_FILE}"
+			filePattern="${LOG_PATH}/automation-%d{yyyy-MM-dd}.log">
+
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1} - %msg%n" />
+
+			<Policies>
+				<!-- Create new file daily -->
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<!-- Root Logger -->
+		<Root level="info">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="FileAppender" />
+		</Root>
+	</Loggers>
+</Configuration>

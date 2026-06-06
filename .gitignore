@@ -1,0 +1,32 @@
+ ====================== 
+# Build folders 
+# ====================== 
+/target/ 
+/build/ 
+/out/ 
+# ====================== 
+# Logs 
+# ====================== 
+*.log 
+logs/ 
+test-output/ 
+# ====================== 
+# Eclipse 
+# ====================== 
+.project 
+.classpath 
+.settings/ 
+bin/ 
+# ====================== 
+# Compiled Java files 
+# ====================== 
+*.class 
+# ====================== 
+# Selenium/Test reports 
+# ====================== 
+/reports/  
+# ====================== 
+# Environment / secrets 
+# ====================== 
+.env 
+config.properties 
